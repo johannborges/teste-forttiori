@@ -1,16 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+import { SharedModule } from './shared.module';
+import { AppRoutingModule } from './app-routing.module';
+import { InterceptorModule } from './interceptor/interceptor.module';
 
 import { AppComponent } from './app.component';
+import { BusLinesComponent } from './bus-lines/bus-lines.component';
+import { ItinerarioComponent } from './itinerario/itinerario.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BusLinesComponent,
+    ItinerarioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SharedModule,
+    HttpClientModule,
+    AppRoutingModule,
+    InterceptorModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
